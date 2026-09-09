@@ -97,6 +97,22 @@
 
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
+  /* ---------- Custom scrollbars (styled, non-native look) ---------- */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg-soft);
+  }
+  ::-webkit-scrollbar { width: 9px; height: 9px; }
+  ::-webkit-scrollbar-track { background: var(--bg-soft); border-radius: 999px; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    border-radius: 999px;
+    border: 2px solid var(--bg-soft);
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { filter: brightness(1.15); }
+  ::-webkit-scrollbar-corner { background: transparent; }
+
   .sr-only {
     position: absolute; width: 1px; height: 1px;
     overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
@@ -647,7 +663,7 @@
       <div class="card reveal">
         <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
         <h3>SWIFT — Support Workflow &amp; Integrated Field Toolkit</h3>
-        <p>Chrome (Manifest V3) extension unifying AI-assisted translation, knowledge-base search, hot-issue alerts, Recurly lookup, one-click 8x8 status control, and Dynamics 365 case tracking for consumer-support agents. Now actively used by an entire team of 9 members.</p>
+        <p>Chrome (Manifest V3) extension unifying AI-assisted translation, knowledge-base search, hot-issue alerts, Recurly lookup, one-click 8x8 status control, and Dynamics 365 case tracking for consumer-support agents. Cut per-ticket handling time from 3–5 minutes of tab-switching across platforms down to under 1–2 minutes.</p>
         <div class="tags">
           <span class="tag">Chrome MV3</span><span class="tag">AI Translation</span><span class="tag">Dynamics 365</span>
         </div>
@@ -662,7 +678,7 @@
               <span class="tag">URL validation</span><span class="tag">Regex allowlisting</span><span class="tag">Locale mapping</span>
             </div>
             <div class="demo-row">
-              <input id="swiftUrlInput" type="text" value="https://www.trendmicro.com/en_us/forHome/products.html?plan=na_mc_pss_12m_10&amp;utm_source=chat&amp;_gl=abc123" aria-label="Sample checkout link to clean">
+              <input id="swiftUrlInput" type="text" value="https://www.acmeshop.com/en_us/products.html?plan=na_mc_pss_12m_10&amp;utm_source=chat&amp;_gl=abc123" aria-label="Sample checkout link to clean">
             </div>
             <div class="demo-row">
               <select id="swiftCountrySelect" aria-label="Target country">
@@ -680,7 +696,7 @@
       <div class="card reveal">
         <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
         <h3>TRACE — Omnichannel Agent Monitor</h3>
-        <p>Real-time presence, chat, and queue dashboard with server-side (Supabase Edge Functions) break, lunch, and shift reminders delivered to Microsoft Teams, per-agent night-shift schedule resolution, and compliance logging. Deployed via Azure Web App. Now used by all 4 team leads and the wider workforce, in teams of 9 agents each, for real-time coverage visibility.</p>
+        <p>Real-time presence, chat, and queue dashboard with server-side (Supabase Edge Functions) break, lunch, and shift reminders delivered to Microsoft Teams, per-agent night-shift schedule resolution, and compliance logging. Deployed via Azure Web App. Replaced manual per-agent status and chat checks inside the CRM — cut an 8–10 minute team check down to under 1 minute with live feeds.</p>
         <div class="tags">
           <span class="tag">Supabase Edge Fn</span><span class="tag">Azure Web App</span><span class="tag">Realtime</span><span class="tag">MS Teams</span>
         </div>
@@ -707,7 +723,7 @@
       <div class="card reveal">
         <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
         <h3>Case Tracker</h3>
-        <p>Dynamics 365 case-reply monitor that surfaces the customer concern, changes case SubStatus, and uses Azure OpenAI Service to draft and send AI replies in the customer's language without leaving the tool. Now deployed across the support department.</p>
+        <p>Dynamics 365 case-reply monitor that surfaces the customer concern, changes case SubStatus, and uses Azure OpenAI Service to draft and send AI replies in the customer's language without leaving the tool. Replaced manual case-by-case review, reply drafting, and translation — cutting per-case handling from 8–10 minutes to 1–3 minutes.</p>
         <div class="tags">
           <span class="tag">Dynamics 365</span><span class="tag">Azure OpenAI</span><span class="tag">Automation</span>
         </div>
@@ -746,15 +762,15 @@
         </button>
         <div class="details-panel" id="details-security">
           <div class="details-inner">
-            <div class="demo-label">Try it — checkout URL allowlist (real validation logic from the Fortify fix)</div>
+            <div class="demo-label">Try it — checkout URL allowlist (illustrative example of the allowlist-validation technique)</div>
             <div class="tags" style="margin-bottom:12px;">
               <span class="tag">Input validation</span><span class="tag">Application security</span><span class="tag">Fortify SCA</span>
             </div>
             <div class="demo-row">
-              <input id="secUrlInput" type="text" placeholder="Paste a domain or URL, e.g. trendmicro.com or evil-example.com" aria-label="URL to validate">
+              <input id="secUrlInput" type="text" placeholder="Paste a domain or URL, e.g. acmeshop.com or evil-example.com" aria-label="URL to validate">
               <button class="demo-btn" id="secCheckBtn" type="button">Check</button>
             </div>
-            <pre class="code-block" id="secResult">Try trendmicro.com vs. some other domain — https:// is added automatically if you leave it off.</pre>
+            <pre class="code-block" id="secResult">Try acmeshop.com vs. some other domain — https:// is added automatically if you leave it off.</pre>
           </div>
         </div>
       </div>
@@ -1328,9 +1344,10 @@
     });
   });
 
-  /* Shared host allowlist — mirrors the real Fortify "Open Redirect" fix (public
-     Trend Micro / Recurly domains only; no secrets, safe to run client-side). */
-  var TRUSTED_HOSTS = /(^|\.)(trendmicro\.(com|com\.au|co\.nz|co\.jp|com\.tw|com\.sg|com\.my|co\.th|co\.id|co\.in|co\.uk|de|fr|it|es|nl|com\.br|com\.mx|eu|ca|co\.kr|com\.hk)|trendmicro-apac\.com|recurly\.com)$/;
+  /* Shared host allowlist — illustrative example only (fictional domains, no
+     real company data; demonstrates the allowlist-validation approach used
+     to fix an Open Redirect finding). */
+  var TRUSTED_HOSTS = /(^|\.)(acmeshop\.com|acmeshop-apac\.com|partnerpay\.com)$/;
   function normalizeUrlInput(raw) {
     raw = (raw || "").trim();
     return /^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(raw) ? raw : "https://" + raw;
@@ -1352,7 +1369,7 @@
       var out = document.getElementById("swiftResult");
       var url = safeUrlDemo(raw);
       if (!url) {
-        out.innerHTML = '<span class="bad">BLOCKED</span> <span class="dim">— not a recognized Trend Micro / Recurly host</span>';
+        out.innerHTML = '<span class="bad">BLOCKED</span> <span class="dim">— not a recognized host on the allowlist</span>';
         growPanel(out.closest(".details-panel"));
         return;
       }
@@ -1369,7 +1386,7 @@
     });
   }
 
-  /* Security Hardening — URL allowlist tester (same logic as above, exposed directly) */
+  /* Security Hardening — URL allowlist tester (same illustrative logic as above, exposed directly) */
   var secCheckBtn = document.getElementById("secCheckBtn");
   if (secCheckBtn) {
     secCheckBtn.addEventListener("click", function () {
